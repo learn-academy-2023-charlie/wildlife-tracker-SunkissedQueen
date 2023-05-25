@@ -18,9 +18,9 @@
 
 ## Create API (model + controller)
 ### API 
-  - Application Programming Interface: allows applications to communicate with each other
-    : transmits data in the form of JSON(JavaScript Object Notation)
-    : API will request data from a different application and its endpoint will respond back with the appropriate data.
+  - Application Programming Interface: allows applications to communicate with each other  
+    : transmits data in the form of JSON(JavaScript Object Notation)  
+    : API will receive a request from a different application, and the API endpoint will respond back with the appropriate data.
 - Generate resource with appropriate columns and datatypes:
   $ `rails g resource RuffleFeather name:string type:string origin:string`
   - resource automatically generates a model, controller, and routes
