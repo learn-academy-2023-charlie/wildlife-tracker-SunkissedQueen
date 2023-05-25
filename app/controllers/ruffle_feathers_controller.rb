@@ -1,0 +1,2 @@
+class RuffleFeathersController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class RuffleFeather < ApplicationRecord
+end
