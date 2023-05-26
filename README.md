@@ -1,20 +1,20 @@
 # API and Postman 5/25/23 Charlie
 
 ## Set up 
-- $ cd Desktop
-- $ rails new rails_api_instructors -d postgresql -T
-- $ cd rails_api_instructors
-- $ rails db:create
-- $ bundle add rspec-rails
-- $ rails generate rspec:install
-- $ rails s
-- $ git remote add origin https://github.com/learn-academy-2023-charlie/wildlife-tracker-SunkissedQueen.git
-- $ git checkout -b main
-- $ git status
-- $ git add .
-- $ git commit -m "initial commit"
-- $ git push origin main
-- $ code .
+- $ `cd Desktop`
+- $ `rails new rails_api_instructors -d postgresql -T`
+- $ `cd rails_api_instructors`
+- $ `rails db:create`
+- $ `bundle add rspec-rails`
+- $ `rails generate rspec:install`
+- $ `rails s`
+- $ `git remote add origin https://github.com/learn-academy-2023-charlie/wildlife-tracker-SunkissedQueen.git`
+- $ `git checkout -b main`
+- $ `git status`
+- $ `git add .`
+- $ `git commit -m "initial commit"`
+- $ `git push origin main`
+- $ `code .`
 
 ## Create API (model + controller)
 ### API 
@@ -24,8 +24,8 @@
 - Generate resource with appropriate columns and datatypes:
   $ `rails g resource RuffleFeather name:string type:string origin:string`
   - resource automatically generates a model, controller, and routes
-- $ rails db:migrate
-- Add entries: $ rails c
+- $ `rails db:migrate`
+- Add entries: $ `rails c`
   > RuffleFeather.create(name: 'Foghorn Leghorn', type: 'rooster', origin: 'Looney Tunes')
 - Disable the authenticity token
 ```rb
@@ -45,7 +45,8 @@ To make requests on the other API endpoints that interacts with the data:
 - create a branch for each API endpoint
 - create a controller method for that endpoint
 - To see the avaiable routes: $ `rails routes -E`
-- Postman: data visualization tool used to make request to the API and check that the API endpoint will produce a successul response
+- Postman: data visualization tool used to make request to the API and check that the API endpoint will produce a successful response
+***NOTE: You don't have to make an account to use Postman.***
 - Status: 200 OK means it was a successful request/response
 - Status: 404 Not found
   - Response will look like an html file in the body
