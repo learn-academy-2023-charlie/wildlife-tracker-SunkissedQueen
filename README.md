@@ -40,12 +40,13 @@ Since the purpose of new and edit are to display forms, we will not make request
     - to display an html form to update an existing instance
   ### new
     - to display an html form to create a new instance
-
+### API endpoints
 To make requests on the other API endpoints that interacts with the data:
 - create a branch for each API endpoint
 - create a controller method for that endpoint
 - To see the avaiable routes: $ `rails routes -E`
-- Postman: data visualization tool used to make request to the API and check that the API endpoint will produce a successful response
+### Postman
+- Postman: data visualization tool used to make request to the API and check that the API endpoint will produce a successful response  
 ***NOTE: You don't have to make an account to use Postman.***
 - Status: 200 OK means it was a successful request/response
 - Status: 404 Not found
@@ -53,7 +54,7 @@ To make requests on the other API endpoints that interacts with the data:
   - Select Preview to see how the error message would look in the browser
 
 ## index
-- to display all the instances
+  - to display all the instances
 - define an index method 
 ```rb
   def index
@@ -65,16 +66,15 @@ To make requests on the other API endpoints that interacts with the data:
   - http verb -> url -> Send
   - Body -> Pretty -> JSON
 
-
 ## show
-- to display one instance
+  - to display one instance
 - define a show method
 - Go to Postman
   - http verb -> url -> Send
   - Body -> Pretty -> JSON
 
 ## create
-- to save the instance created from the user input on the new form
+  - to save the instance created from the user input on the new form
 - define a create method
 - Go to Postman
   - http verb -> url -> Send
@@ -90,9 +90,9 @@ To make requests on the other API endpoints that interacts with the data:
   - Body -> Pretty -> JSON
 
 ## update
-- to save the instance modified from the user input on the edit form
+  - to save the instance modified from the user input on the edit form
 
 ## destroy
-- to delete an existing instance
+  - to delete an existing instance
 
 
