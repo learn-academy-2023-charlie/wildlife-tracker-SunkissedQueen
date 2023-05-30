@@ -80,19 +80,39 @@ To make requests on the other API endpoints that interacts with the data:
   - http verb -> url -> Send
   - Row below the request: Body -> raw -> JSON
   - Provide an object with the required attributes
-  ```json
-    {
-        "name": "Miss Prissy",
-        "species": "hen",
-        "origin": "Looney Tunes"
-    }
-  ```
+```json
+  {
+      "name": "Miss Prissy",
+      "species": "hen",
+      "origin": "Looney Tunes"
+  }
+```
   - Body -> Pretty -> JSON
 
 ## update
-  - to save the instance modified from the user input on the edit form
+- to save the instance modified from the user input on the edit form
+- define a update method
+- Go to Postman
+  - http verb -> url -> Send
+  - Row below the request: Body -> raw -> JSON
+  - Provide an object with the required attributes
+```json
+  {
+    "species": "happy hen"
+  }
+```
+  - Body -> Pretty -> JSON
 
 ## destroy
   - to delete an existing instance
-
-
+- define a destroy method
+- Go to Postman
+  - http verb -> url -> Send
+  - Row below the request: Body -> raw -> JSON
+  - Provide an object with the required attributes
+```json
+  {
+    "species": "happy hen"
+  }
+```
+  - Body -> Pretty -> JSON
