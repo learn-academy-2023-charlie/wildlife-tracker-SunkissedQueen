@@ -18,6 +18,26 @@ class RuffleFeathersController < ApplicationController
     end
   end
 
+  def update
+    feather = RuffleFeather.find(params[:id])
+    feather.update(feather_params)
+    if feather.valid?
+      render json: feather
+    else
+      render json: feather.errors
+    end
+  end
+
+  def destroy
+    feather = RuffleFeather.find(params[:id])
+    if feather.destroy
+      feathers = RuffleFeather.all
+      render json: feathers
+    else
+      render json: feather.errors
+    end
+  end
+
   private
   def feather_params
     params.require(:ruffle_feather).permit(:name, :species, :origin)
