@@ -64,20 +64,44 @@ To make requests on the other API endpoints that interacts with the data:
 ```
 - Go to Postman
   - http verb -> url -> Send
+    - GET -> localhost:3000/ruffle_feathers
   - Body -> Pretty -> JSON
 
 ## show
   - to display one instance
 - define a show method
+```rb
+  def show
+    feather = RuffleFeather.find(params[:id])
+    render json: feather
+  end
+```
 - Go to Postman
   - http verb -> url -> Send
+    - GET -> localhost:3000/ruffle_feathers/1
   - Body -> Pretty -> JSON
 
 ## create
   - to save the instance created from the user input on the new form
 - define a create method
+```rb
+  def create
+    feather = RuffleFeather.create(feather_params)
+    if feather.valid?
+      render json: feather
+    else
+      render json: feather.errors
+    end
+  end
+  
+  private
+  def feather_params
+    params.require(:ruffle_feather).permit(:name, :species, :origin)
+  end
+```
 - Go to Postman
   - http verb -> url -> Send
+    - POST -> localhost:3000/ruffle_feathers
   - Row below the request: Body -> raw -> JSON
   - Provide an object with the required attributes
 ```json
@@ -92,10 +116,22 @@ To make requests on the other API endpoints that interacts with the data:
 ## update
 - to save the instance modified from the user input on the edit form
 - define a update method
+```rb
+  def update
+    feather = RuffleFeather.find(params[:id])
+    feather.update(feather_params)
+    if feather.valid?
+      render json: feather
+    else
+      render json: feather.errors
+    end
+  end
+```
 - Go to Postman
   - http verb -> url -> Send
+    - PATCH -> localhost:3000/ruffle_feathers/1
   - Row below the request: Body -> raw -> JSON
-  - Provide an object with the required attributes
+  - Provide an object with the required attribute(s)
 ```json
   {
     "species": "happy hen"
@@ -106,6 +142,18 @@ To make requests on the other API endpoints that interacts with the data:
 ## destroy
   - to delete an existing instance
 - define a destroy method
+```rb
+  def destroy
+    feather = RuffleFeather.find(params[:id])
+    if feather.destroy
+      feathers = RuffleFeather.all
+      render json: feathers
+    else
+      render json: feather.errors
+    end
+  end
+```
 - Go to Postman
   - http verb -> url -> Send
+    - DELETE -> localhost:3000/ruffle_feathers/1
   - Body -> Pretty -> JSON
